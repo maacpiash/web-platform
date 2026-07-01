@@ -1,0 +1,19 @@
+{
+  "name": "web-platform",
+  "private": true,
+  "author": {
+    "name": "Ahad Chowdhury",
+    "url": "https://www.ahadchowdhury.com"
+  },
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:portfolio": "bun run --filter portfolio dev",
+    "dev:blog": "bun run --filter blog dev",
+    "build": "bun run --filter design-system build && bun run --filter portfolio build && bun run --filter blog build",
+    "build:design-system": "bun run --filter design-system build"
+  }
+}
