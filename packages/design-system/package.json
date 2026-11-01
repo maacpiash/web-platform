@@ -1,0 +1,20 @@
+{
+  "name": "@web-platform/design-system",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@web-platform/tooling": "workspace:*"
+  },
+  "exports": {
+    "./tokens.css": "./tokens/index.css",
+    "./base.css": "./base.css",
+    "./button.css": "./styles/button.css",
+    "./card.css": "./styles/card.css",
+    "./badge.css": "./styles/badge.css",
+    "./no-flash-script": "./theme/no-flash-script.ts"
+  },
+  "scripts": {
+    "build": "bun build ./tokens/index.css ./base.css ./styles/*.css --minify --outdir dist"
+  }
+}

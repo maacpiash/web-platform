@@ -1,0 +1,11 @@
+@layer tokens {
+  :root {
+    --ds-font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --ds-font-mono: ui-monospace, 'SF Mono', monospace;
+    --ds-font-size-sm: 0.875rem;
+    --ds-font-size-md: 1rem;
+    --ds-font-size-lg: 1.25rem;
+    --ds-font-size-xl: 2rem;
+    --ds-line-height: 1.6;
+  }
+}

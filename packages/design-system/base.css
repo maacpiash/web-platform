@@ -1,0 +1,41 @@
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    color-scheme: light dark;
+  }
+
+  body {
+    margin: 0;
+    background: var(--ds-color-bg);
+    color: var(--ds-color-text);
+    font-family: var(--ds-font-sans);
+    font-size: var(--ds-font-size-md);
+    line-height: var(--ds-line-height);
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.2;
+    margin: 0 0 var(--ds-space-md);
+  }
+
+  p {
+    margin: 0 0 var(--ds-space-md);
+  }
+
+  .ac-container {
+    max-width: var(--ds-container-width);
+    margin-inline: auto;
+    padding-inline: var(--ds-space-md);
+  }
+
+  .ac-text-secondary {
+    color: var(--ds-color-text-secondary);
+  }
+}

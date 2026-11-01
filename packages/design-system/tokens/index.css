@@ -1,0 +1,7 @@
+/* Establishes cascade order up front so import order in consuming apps
+   can't accidentally change specificity. Import this file first. */
+@layer tokens, base, components;
+
+@import './color.css';
+@import './spacing.css';
+@import './typography.css';

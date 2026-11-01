@@ -1,0 +1,36 @@
+/* Pure CSS — works in Astro markup and Solid JSX identically, no JS needed. */
+@layer components {
+  .ac-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ds-space-xs);
+    border-radius: var(--ds-radius);
+    border: 1px solid var(--ds-color-border);
+    padding: var(--ds-space-sm) var(--ds-space-md);
+    font-size: var(--ds-font-size-sm);
+    font-family: inherit;
+    cursor: pointer;
+    background: var(--ds-color-bg);
+    color: var(--ds-color-text);
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .ac-button:hover {
+    background: var(--ds-color-bg-subtle);
+  }
+
+  .ac-button--primary {
+    background: var(--ds-color-accent);
+    border-color: var(--ds-color-accent);
+    color: var(--ds-color-accent-text);
+  }
+
+  .ac-button--primary:hover {
+    filter: brightness(1.08);
+  }
+
+  .ac-button--ghost {
+    border-color: transparent;
+    background: transparent;
+  }
+}

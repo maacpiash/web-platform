@@ -1,0 +1,12 @@
+@layer tokens {
+  :root {
+    --ds-space-xs: 0.25rem;
+    --ds-space-sm: 0.5rem;
+    --ds-space-md: 1rem;
+    --ds-space-lg: 1.5rem;
+    --ds-space-xl: 2.5rem;
+    --ds-radius: 8px;
+    --ds-radius-lg: 12px;
+    --ds-container-width: 720px;
+  }
+}
