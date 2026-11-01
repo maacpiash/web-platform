@@ -1,14 +1,14 @@
 # Web Platform
 
-Bun workspaces monorepo: a shared `design-system` package consumed by an Astro
-portfolio and a TanStack Start (Solid.js) blog.
+Bun workspaces monorepo: shared `design-system` and `utils` packages consumed by `public-static`, an Astro portfolio and `technical-date`, TanStack Start (Solid.js) blog.
 
 ```
 apps/
-    portfolio/            # Astro site
-    blog/                 # TanStack Start + Solid.js
+    public-static/                  # Astro site
+    technical-date/                 # TanStack Start + Solid.js
 packages/
-    design-system/        # Tokens, CSS, and (future) Solid components
+    design-system/                  # CSS tokens and styles
+    utils/                          # Typescript utility functions
 ```
 
 _WIP_
