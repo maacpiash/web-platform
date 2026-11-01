@@ -11,9 +11,14 @@
     "packages/*"
   ],
   "scripts": {
-    "dev:portfolio": "bun run --filter portfolio dev",
-    "dev:blog": "bun run --filter blog dev",
-    "build": "bun run --filter design-system build && bun run --filter portfolio build && bun run --filter blog build",
-    "build:design-system": "bun run --filter design-system build"
+    "dev:portfolio": "bun --bun run --filter public-static dev",
+    "dev:blog": "bun run --filter technical-date dev",
+    "build": "bun run build:design-system && bun run --filter public-static --filter technical-date build",
+    "build:design-system": "bun run --filter @web-platform/design-system build"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.4",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
   }
 }
