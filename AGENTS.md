@@ -1,7 +1,6 @@
 # AGENTS.md
 
-This file provides guidance to AI coding agents (ChatGPT, Claude Code, Gemini
-CLI, Codex, OpenCode, etc.) working in this repository.
+This file provides guidance to AI coding agents (ChatGPT, Claude Code, Gemini CLI, Codex, OpenCode, Pi, etc.) working in this repository.
 
 ## Project Overview
 
@@ -16,248 +15,53 @@ The goals are:
 
 This repository uses **Bun Workspaces**.
 
-# Repository Structure
+## Repository Structure
 
-```
+```sh
 .
 ├── apps/
-│   ├── portfolio/          # Astro
-│   └── blog/               # TanStack Start + Solid.js
+│   ├── public-static/                  # Personal dev portfolio, developed with Astro
+│   └── technical-date/                 # Personal blog, developed with Solid.js
 │
 ├── packages/
-│   ├── design-system/
-│   ├── icons/
-│   ├── tokens/
-│   └── config/
+│   ├── design-system/                  # CSS styles, CSS tokens, icons, and other style-related artefacts
+│   └── utils/                          # commonly used utility functions in Typescript
 │
 ├── docs/
+│   ├── agents/                         # task-specific guidance for AI coding agents
+│   ├── api/                            # API contracts in YAML format
+│   ├── decisions/                      # architectural decisions in Markdown ADR format
+│   └── domain/                         # domain-specific knowledge
 ├── scripts/
+├── ARCHITECTURE.md
 └── AGENTS.md
 ```
 
 Never duplicate code between apps if it can live in a shared package.
 
-# Tech Stack
-
-Package manager:
-
-- Bun
-
-Languages:
-
-- TypeScript
-- CSS
-
-Frameworks:
-
-- Astro
-- Solid.js
-- TanStack Start
-
-Testing:
-
-- Vitest
-- Playwright
-
-Linting:
-
-- ESLint
-- Prettier
-
-# Design Philosophy
-
-The design system is the source of truth.
-
-Apps consume the design system.
-
-Apps should not redefine:
-
-- colors
-- typography
-- spacing
-- border radius
-- shadows
-- animations
-
-If a missing primitive is needed, add it to the design system rather than
-implementing it locally.
-
-# CSS Guidelines
-
-Prefer:
-
-- CSS custom properties
-- CSS Layers
-- Modern CSS
-- Container Queries
-- Logical Properties
-
-Avoid:
-
-- !important
-- ID selectors
-- Deep selector nesting
-- Global resets inside apps
-
-Use:
-
-```
-@layer reset;
-@layer tokens;
-@layer base;
-@layer utilities;
-@layer components;
-```
-
-# Design Tokens
-
-All visual values originate from design tokens.
-
-Examples:
-
-- color
-- spacing
-- typography
-- radius
-- shadow
-- z-index
-- motion
-
-Never hardcode values if a token exists.
-
-Prefer:
-
-```
-var(--color-primary)
-```
-
-instead of
-
-```
-#3b82f6
-```
-
-# Components
-
-Components should be:
-
-- composable
-- accessible
-- framework-agnostic where possible
-- minimally opinionated
-
-Favor composition over configuration.
-
-Avoid components with more than four props.
-
-# Accessibility
-
-Accessibility is required.
-
-Every new component should consider:
-
-- keyboard navigation
-- screen readers
-- visible focus states
-- sufficient contrast
-- semantic HTML
-
-Never remove focus outlines without providing an accessible replacement.
-
-# Performance
-
-Priorities:
-
-1. minimal JavaScript
-2. static rendering where appropriate
-3. progressive enhancement
-4. CSS over JS when possible
-
-Avoid unnecessary client-side hydration.
-
-# TypeScript
-
-Prefer:
-
-- readonly
-- discriminated unions
-- explicit exported types
-- strict mode compatibility
-
-Avoid:
-
-- any
-- unnecessary type assertions
-- non-null assertions unless unavoidable
-
-# Code Style
-
-Prefer:
-
-- early returns
-- small functions
-- descriptive names
-- immutable data
-
-Avoid:
-
-- deeply nested conditionals
-- long functions
-- duplicated logic
-
-# Dependencies
-
-Before adding a dependency:
-
-Ask:
-
-1. Can existing code solve this?
-2. Is the package actively maintained?
-3. Is it tree-shakeable?
-4. Does it improve developer experience enough to justify another dependency?
-
-Favor fewer dependencies.
-
-# File Organization
-
-Keep related files together.
-
-Example:
-
-```
-Button/
-    Button.tsx
-    Button.css
-    Button.test.ts
-    Button.stories.ts
-    index.ts
-```
-
-# Testing
-
-Every reusable component should have:
-
-- unit tests
-- accessibility tests when practical
-
-Critical user flows should have Playwright tests.
-
-# Documentation
-
-Every exported component should include:
-
-- purpose
-- usage example
-- supported props
-- accessibility notes
-
-# Commit Philosophy
-
-Prefer small focused changes.
-
-Avoid unrelated refactors in feature PRs.
-
-# When Making Changes
+## Tech Stack
+
+- Package manager: Bun
+- Languages: TypeScript, CSS
+- Libraries and Frameworks: Astro, Solid.js, Solid Start
+- Testing: Bun test runner, Vitest, Playwright
+
+## Task-Specific Guidance
+
+Read the relevant file before starting work of that kind:
+
+| When you are...                                  | Read                                                         |
+| ------------------------------------------------ | ------------------------------------------------------------ |
+| writing CSS, tokens, or any visual styling       | [docs/agents/styling.md](docs/agents/styling.md)             |
+| creating or changing a UI component              | [docs/agents/components.md](docs/agents/components.md)       |
+| building or changing user-facing UI              | [docs/agents/accessibility.md](docs/agents/accessibility.md) |
+| adding client-side JS, hydration, or rendering   | [docs/agents/performance.md](docs/agents/performance.md)     |
+| writing TypeScript                               | [docs/agents/typescript.md](docs/agents/typescript.md)       |
+| adding or upgrading a dependency                 | [docs/agents/dependencies.md](docs/agents/dependencies.md)   |
+| writing tests or adding components / user flows  | [docs/agents/testing.md](docs/agents/testing.md)             |
+| committing or opening a pull request             | [docs/agents/commits.md](docs/agents/commits.md)             |
+
+## When Making Changes
 
 Before making a change:
 
@@ -272,7 +76,7 @@ After making a change:
 - run tests
 - ensure TypeScript passes
 
-# If Unsure
+## If Unsure
 
 Prefer asking for clarification instead of making assumptions about:
 
@@ -281,7 +85,7 @@ Prefer asking for clarification instead of making assumptions about:
 - architecture
 - public interfaces
 
-# Guiding Principles
+## Guiding Principles
 
 1. Accessibility first.
 2. Simplicity over cleverness.
